@@ -1,26 +1,19 @@
-// regular function that checks if a number is odd or even and logs it
-function checkParity(num) {
-    if (typeof num !== 'number' || isNaN(num)) {
-        console.log('Please provide a valid number');
-        return;
-    }
+// regular function
+function verificarNumero(num) {
 
     if (num % 2 === 0) {
-        console.log(`${num} is even`);
+        console.log(`${num} es par`);
     } else {
-        console.log(`${num} is odd`);
+        console.log(`${num} es impar`);
     }
 }
 
-// arrow function version with the same behavior
-const checkParityArrow = (num) => {
-    if (typeof num !== 'number' || isNaN(num)) {
-        console.log('Please provide a valid number');
-        return;
-    }
-
-    console.log(`${num} is ${num % 2 === 0 ? 'even' : 'odd'}`);
+// arrow function 
+const verificarNumeroArrow = (num) => {
+    console.log(`${num} es ${num % 2 === 0 ? 'par' : 'impar'}`);
 };
 
-// export functions if needed
-module.exports = { checkParity, checkParityArrow };
+// export functions
+module.exports = { verificarNumero, verificarNumeroArrow };
+};
+
