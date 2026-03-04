@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Challenge 02 - Contacts App</title>
-    <!-- load React/ReactDOM/Babel from CDN for simplicity -->
+    <title>Desafío 02 - Aplicación de Contactos</title>
+    <!-- Cargar React/ReactDOM/Babel desde CDN -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -22,20 +22,20 @@
 
 <script type="text/babel">
 function Loader() {
-    return <div className="loader">Loading...</div>;
+    return <div className="loader">Cargando...</div>;
 }
 
 function ContactItem({ contact, onDelete }) {
     return (
         <div className="contact">
             {contact.name} - {contact.phone}
-            <button onClick={() => onDelete(contact.id)}>Delete</button>
+            <button onClick={() => onDelete(contact.id)}>Eliminar</button>
         </div>
     );
 }
 
 function ContactList({ contacts, onDelete }) {
-    if (contacts.length === 0) return <p>No contacts.</p>;
+    if (contacts.length === 0) return <p>Sin contactos.</p>;
     return (
         <div>
             {contacts.map(c => (
@@ -60,16 +60,16 @@ function ContactForm({ onAdd }) {
     return (
         <form onSubmit={handleSubmit}>
             <input
-                placeholder="Name"
+                placeholder="Nombre"
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
             <input
-                placeholder="Phone"
+                placeholder="Teléfono"
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
             />
-            <button type="submit">Add</button>
+            <button type="submit">Agregar</button>
         </form>
     );
 }
@@ -80,11 +80,11 @@ function App() {
     const nextId = React.useRef(1);
 
     React.useEffect(() => {
-        // simulate load
+        // simular carga
         setTimeout(() => {
             const initial = [
-                { id: nextId.current++, name: 'Alice', phone: '123-456' },
-                { id: nextId.current++, name: 'Bob', phone: '987-654' }
+                { id: nextId.current++, name: 'Alicia', phone: '123-456' },
+                { id: nextId.current++, name: 'Roberto', phone: '987-654' }
             ];
             setContacts(initial);
             setLoading(false);
@@ -104,7 +104,7 @@ function App() {
 
     return (
         <div>
-            <h1>Contacts</h1>
+            <h1>Contactos</h1>
             {loading ? (
                 <Loader />
             ) : (
